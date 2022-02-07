@@ -43,7 +43,7 @@ const TextAreaForm = (props) => {
                     <button disabled={text.length === 0} type="button" className={`btn btn-${props.mode === "light" ? "dark" : props.mode} mx-2 my-1`} onClick={handleExtraSpace}>Clear Extra Space</button>
                 </div>
                 <h4 className="mt-3">Character,Word and Sentence counts</h4>
-                <p>{text.length} characters, {text.split(" ").filter((item) => { return item.length !== 0 }).length} Words
+                <p>{text.length} characters, {text.split(/\s+/).filter((item) => { return item.length !== 0 }).length} Words
                     and {text.length === 0 ? text.split(".").length - 1 : text.split(".").length} Sentences</p>
                 <h3>Preview</h3>
                 <p>{text.length > 0 ? text : "Write some text to the textarea..."}</p>
