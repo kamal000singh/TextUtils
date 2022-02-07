@@ -1,14 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Navbar = (props) => {
   return (
     <>
       <nav className={`navbar navbar-expand-lg navbar-${props.mode === "light" ? "light" : "dark"} bg-${props.mode}`}>
         <div className="container">
-          <Link className="navbar-brand" to="/">
+          <a className="navbar-brand" href="#">
             <h1>TextUtils</h1>
-          </Link>
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -21,9 +20,6 @@ const Navbar = (props) => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ms-auto me-4">
-              <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
-            </ul>
             <div className="bg-success rounded mx-2 my-1" onClick={() => { props.toggleMode("success") }} style={{ height: '30px', width: '30px', cursor: 'pointer', float: 'left' }}></div>
             <div className="bg-danger rounded mx-2 my-1" onClick={() => { props.toggleMode("danger") }} style={{ height: '30px', width: '30px', cursor: 'pointer', float: 'left' }}></div>
             <div className="bg-primary rounded mx-2 my-1" onClick={() => { props.toggleMode("primary") }} style={{ height: '30px', width: '30px', cursor: 'pointer', float: 'left' }}></div>

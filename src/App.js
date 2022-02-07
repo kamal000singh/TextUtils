@@ -1,10 +1,7 @@
 import { useState, memo } from "react";
 import Alert from "./components/Alert";
-import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import TextAreaForm from "./components/TextAreaForm";
-import About from "./pages/About";
-import NotFound from "./pages/NotFound";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -49,6 +46,13 @@ function App() {
         document.title = "TextUtils - Yellow Mode";
         showAlert("Yellow mode has been enabled", "warning");
         break;
+      case "light":
+        setMode("light");
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        document.title = "TextUtils - Home";
+        showAlert("Light mode has been enabled", "light");
+        break;
       case "dark":
         setMode(color);
         document.body.style.backgroundColor = "#444444";
@@ -69,11 +73,7 @@ function App() {
     <>
       <Navbar mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
-      <Routes>
-        <Route path="/" element={<TextAreaForm mode={mode} alert={showAlert} />} />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <TextAreaForm mode={mode} alert={showAlert} />
     </>
   );
 }

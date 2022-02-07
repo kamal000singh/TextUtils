@@ -8,24 +8,24 @@ const TextAreaForm = (props) => {
     }
     const handleUppercase = () => {
         setText(text.toUpperCase());
-        props.alert(`All Characters converted to UPPERCASE`, "success")
+        props.alert(`All Characters converted to UPPERCASE`, props.mode)
     }
     const handleLowercase = () => {
         setText(text.toLowerCase());
-        props.alert(`All Characters converted to lowercase`, "success")
+        props.alert(`All Characters converted to lowercase`, props.mode)
     }
     const handleCopyClipboard = () => {
         navigator.clipboard.writeText(text)
-        props.alert(`Copy clipboard to clipboard`, "success")
+        props.alert(`Copy clipboard to clipboard`, props.mode)
 
     }
     const handleClear = () => {
         setText("");
-        props.alert(`Clear all Characters`, "success")
+        props.alert(`Clear all Characters`, props.mode)
     }
     const handleExtraSpace = () => {
         setText(text.split(/[ ]+/).join(" "));
-        props.alert(`Remove all extra spaces between characters`, "success")
+        props.alert(`Remove all extra spaces between characters`, props.mode)
     }
     return <>
         <div>
