@@ -110,6 +110,7 @@ function App() {
       <Alert alert={alert} />
       <Routes>
         <Route path="/" element={<TextAreaForm mode={mode} alert={showAlert} />} />
+        <Route path="/TextUtils/" element={<TextAreaForm mode={mode} alert={showAlert} />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
