@@ -16,7 +16,6 @@ function App() {
     }, 2000);
   }
   const toggleMode = (color) => {
-    console.log(color);
     switch (color) {
       case 'success':
         setMode(color);
