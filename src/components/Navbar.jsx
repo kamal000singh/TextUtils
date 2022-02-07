@@ -2,19 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = (props) => {
-  const handleGreen = () => {
-    props.toggleMode("success")
-  }
-  const handleRed = () => {
-    props.toggleMode("danger")
-  }
-  const handleBlue = () => {
-    props.toggleMode("primary")
-  }
-  const handleBlack = () => {
-    props.toggleMode("dark")
-  }
-
   return (
     <>
       <nav className={`navbar navbar-expand-lg navbar-${props.mode === "light" ? "light" : "dark"} bg-${props.mode}`}>
@@ -37,22 +24,12 @@ const Navbar = (props) => {
             <ul className="navbar-nav ms-auto me-4">
               <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
             </ul>
-            <div className="form-check form-switch  me-4">
-              <input className="form-check-input" type="checkbox" onClick={handleGreen} id="green" />
-              <label className={`form-check-label text-${props.mode === "light" ? "dark" : "light"}`} htmlFor="green">Green Mode</label>
-            </div>
-            <div className="form-check form-switch me-4">
-              <input className="form-check-input" type="checkbox" onClick={handleRed} id="red" />
-              <label className={`form-check-label text-${props.mode === "light" ? "dark" : "light"}`} htmlFor="red">Red Mode</label>
-            </div>
-            <div className="form-check form-switch me-4">
-              <input className="form-check-input" type="checkbox" onClick={handleBlue} id="blue" />
-              <label className={`form-check-label text-${props.mode === "light" ? "dark" : "light"}`} htmlFor="blue">Blue Mode</label>
-            </div>
-            <div className="form-check form-switch me-5">
-              <input className="form-check-input" type="checkbox" onClick={handleBlack} id="dark" />
-              <label className={`form-check-label text-${props.mode === "light" ? "dark" : "light"}`} htmlFor="dark">Dark Mode</label>
-            </div>
+            <div className="bg-success rounded mx-2 my-1" onClick={() => { props.toggleMode("success") }} style={{ height: '30px', width: '30px', cursor: 'pointer', float: 'left' }}></div>
+            <div className="bg-danger rounded mx-2 my-1" onClick={() => { props.toggleMode("danger") }} style={{ height: '30px', width: '30px', cursor: 'pointer', float: 'left' }}></div>
+            <div className="bg-primary rounded mx-2 my-1" onClick={() => { props.toggleMode("primary") }} style={{ height: '30px', width: '30px', cursor: 'pointer', float: 'left' }}></div>
+            <div className="bg-warning rounded mx-2 my-1" onClick={() => { props.toggleMode("warning") }} style={{ height: '30px', width: '30px', cursor: 'pointer', float: 'left' }}></div>
+            <div className="bg-light rounded mx-2 my-1" onClick={() => { props.toggleMode("light") }} style={{ height: '30px', width: '30px', cursor: 'pointer', float: 'left' }}></div>
+            <div className="bg-dark rounded mx-2 my-1" onClick={() => { props.toggleMode("dark") }} style={{ height: '30px', width: '30px', cursor: 'pointer', float: 'left' }}></div>
           </div>
         </div>
       </nav>
